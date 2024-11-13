@@ -27,63 +27,56 @@ This project guides you through setting up **VPC Peering** between two Virtual P
 
 ### Step 1: Create VPCs
 
-Create two VPCs with **unique CIDR blocks**. Configure subnets and routing within each VPC.
+1. **Create two VPCs** with unique CIDR blocks.
+2. **Configure subnets** and **routing** within each VPC.
 
-1. **Create VPC 1**
-   - Set up subnets and configure routing.
-
-2. **Create VPC 2**
-   - Set up subnets and configure routing.
-
----
+**Flow:**
+   - Start Project
+   - Create VPC 1 → Configure Subnets & Routing for VPC 1
+   - Create VPC 2 → Configure Subnets & Routing for VPC 2
 
 ### Step 2: Set Up VPC Peering
 
-1. **Request VPC Peering Connection**
-   - Initiate a peering connection request from **VPC 1**.
+1. **Request a VPC Peering Connection** from VPC 1 to VPC 2.
+2. **Accept the VPC Peering Connection** in VPC 2.
 
-2. **Accept Peering Connection**
-   - Accept the peering request in **VPC 2**.
-
----
+**Flow:**
+   - Request Peering from VPC 1 → Accept Peering in VPC 2
 
 ### Step 3: Configure Route Tables
 
-Update the route tables in each VPC to allow traffic to flow between them.
+1. **Update the Route Table** in VPC 1 to route traffic to VPC 2.
+2. **Update the Route Table** in VPC 2 to route traffic to VPC 1.
 
-1. **Update Route Table for VPC 1**
-   - Add a route to direct traffic to **VPC 2**.
-
-2. **Update Route Table for VPC 2**
-   - Add a route to direct traffic to **VPC 1**.
-
----
+**Flow:**
+   - Update Route Table in VPC 1 → Add Route to VPC 2
+   - Update Route Table in VPC 2 → Add Route to VPC 1
 
 ### Step 4: Test Connectivity
 
-1. **Launch EC2 Instances**
-   - Launch an instance in each VPC.
+1. **Launch EC2 instances** in both VPCs.
+2. **Test connectivity** between the instances using ping or similar network tools.
 
-2. **Test Connectivity**
-   - Test network connectivity (e.g., ping) between the instances to confirm successful peering.
+**Flow:**
+   - Launch EC2 in VPC 1 → Launch EC2 in VPC 2
+   - Ping from VPC 1 to VPC 2 → Ping from VPC 2 to VPC 1 → Verify Connection
 
 ---
 
 ## 🎮 Project Modes
 
-1. **Guided Mode**: Follow step-by-step instructions.
-2. **Explorer Mode**: Experiment with configurations and dive deeper into VPC Peering.
+- **Guided Mode**: Follow step-by-step instructions.
+- **Explorer Mode**: Experiment with configurations and dive deeper into VPC Peering.
 
 ---
 
-## 📚 Resources
+## Resources
 
-- [AWS Documentation on VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
-- [AWS VPC Peering User Guide](https://docs.aws.amazon.com/vpc/latest/peering/)
+- **AWS Documentation on VPC Peering**
+- **AWS VPC Peering User Guide**
 
----
+Happy Peering! 🌐
 
-## Happy Peering! 🌐
 
 ### Project Flow
 

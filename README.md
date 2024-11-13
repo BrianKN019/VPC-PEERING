@@ -87,13 +87,17 @@ Update the route tables in each VPC to allow traffic to flow between them.
 
 ### Project Flow
 
-1. **Project Initialization**
-2. **Create VPC 1** ➔ Configure Subnets & Routing
-3. **Create VPC 2** ➔ Configure Subnets & Routing
-4. **Request Peering Connection** from VPC 1
-5. **Accept Peering Connection** in VPC 2
-6. **Update Route Table** for VPC 1 to route to VPC 2
-7. **Update Route Table** for VPC 2 to route to VPC 1
-8. **Test Connectivity** between instances in each VPC
-9. **Project Complete! 🎉**
-10. **Optional: Clean Up Resources**
+```mermaid
+flowchart TD
+    Start[Project Initialization] --> VPC1[Create VPC 1]
+    Start --> VPC2[Create VPC 2]
+    VPC1 --> Subnet1[Configure Subnets & Routing for VPC 1]
+    VPC2 --> Subnet2[Configure Subnets & Routing for VPC 2]
+    Subnet1 --> Peering1[Request Peering Connection]
+    Subnet2 --> Peering2[Accept Peering Connection]
+    Peering1 --> Route1[Update Route Table for VPC 1]
+    Peering2 --> Route2[Update Route Table for VPC 2]
+    Route1 --> Connectivity[Test Connectivity Between Instances]
+    Connectivity --> Complete[Project Complete! 🎉]
+    Complete --> Cleanup[Optional: Clean Up Resources]
+```

@@ -64,7 +64,8 @@ Next, we'll establish a peering connection between the two VPCs.
    - Request Peering from VPC 1 → Accept Peering in VPC 2
 
 
- ```flowchart TD
+ ```mermaid
+flowchart TD
     RequestPeering[Request Peering from VPC 1] --> AcceptPeering[Accept Peering in VPC 2]
 
  ```
@@ -80,12 +81,15 @@ Next, we'll establish a peering connection between the two VPCs.
    - Update Route Table in VPC 2 → Add Route to VPC 1
 
 
- ```flowchart TD
+flowchart TD
     RouteVPC1[Update Route Table in VPC 1] --> RouteToVPC2[Add Route to VPC 2]
     RouteVPC2[Update Route Table in VPC 2] --> RouteToVPC1[Add Route to VPC 1]
 
- ```
-
+ ```mermaid
+flowchart TD
+    RouteVPC1[Update Route Table in VPC 1] --> RouteToVPC2[Add Route to VPC 2]
+    RouteVPC2[Update Route Table in VPC 2] --> RouteToVPC1[Add Route to VPC 1]
+```
 
 
 
@@ -100,7 +104,8 @@ Next, we'll establish a peering connection between the two VPCs.
 
 ---
 
- ```flowchart TD
+ ```mermaid
+flowchart TD
     EC2VPC1[Launch EC2 in VPC 1] --> EC2VPC2[Launch EC2 in VPC 2]
     EC2VPC2 --> PingTest[Ping from VPC 1 to VPC 2]
     PingTest --> VerifyConnection[Verify Connection]

@@ -1,47 +1,74 @@
-# 🚀 VPC Peering Project 🚀
+# VPC Peering Project 🚀
 
-## Overview
+Welcome to the **VPC Peering Project**! In this project, we're taking a big step forward by setting up VPC Peering, connecting TWO VPCs instead of just one. This project will help you revise and solidify your previous knowledge in a new and exciting scenario.
 
-This project guides you through setting up **VPC Peering** between two Virtual Private Clouds (VPCs) in AWS. Establishing VPC Peering creates a **secure, private connection** for seamless communication between the VPCs, enhancing network segmentation and security within your AWS environment.
+## Table of Contents
 
----
+- [Introduction](#introduction)
+- [Project Overview](#project-overview)
+- [Prerequisites](#prerequisites)
+- [Setup Guide](#setup-guide)
+  - [Step 1: Create VPCs](#step-1-create-vpcs)
+  - [Step 2: Set Up VPC Peering](#step-2-set-up-vpc-peering)
+  - [Step 3: Configure Route Tables](#step-3-configure-route-tables)
+  - [Step 4: Test Connectivity](#step-4-test-connectivity)
+- [Project Modes](#project-modes)
+- [Resources](#resources)
 
-## 🎯 Objectives
+## Introduction
 
-1. **Create and configure multiple VPCs.**
-2. **Establish a VPC Peering Connection** to enable communication between isolated VPCs.
-3. **Configure Route Tables** to route traffic between peered VPCs.
-4. **Test Peering Connectivity** to ensure successful setup.
+In this project, you'll get hands-on experience with setting up VPC Peering between two Virtual Private Clouds (VPCs). This will enhance your understanding of network segmentation, security, and connectivity within the AWS environment.
 
----
+## Project Overview
 
-## 🛠 Prerequisites
+### Objectives
 
-- **AWS Account** (Free tier is sufficient)
-- Basic knowledge of **VPCs, subnets, and route tables**
-- Familiarity with the **AWS Management Console**
+- ☁️ Set up multiple VPCs.
+- 🌉 Create a VPC peering connection to enable communication between two VPCs.
+- 👩‍🔬 Test VPC peering with connectivity tests.
 
----
+## Prerequisites
 
-## 🧩 Setup Guide
+Before you start, ensure you have:
+
+- An AWS account.
+- Basic knowledge of VPCs, subnets, and route tables.
+- Familiarity with the AWS Management Console.
+
+## Setup Guide
 
 ### Step 1: Create VPCs
 
-1. **Create two VPCs** with unique CIDR blocks.
-2. **Configure subnets** and **routing** within each VPC.
+First, we'll create two VPCs to be connected via VPC Peering.
+ - Create VPC 1 → Configure Subnets & Routing for VPC 1
+ - Create VPC 2 → Configure Subnets & Routing for VPC 2
 
-**Flow:**
-   - Start Project
-   - Create VPC 1 → Configure Subnets & Routing for VPC 1
-   - Create VPC 2 → Configure Subnets & Routing for VPC 2
+```mermaid
+flowchart TD
+    Start[Start Project] --> VPC1[Create VPC 1]
+    VPC1 --> Subnet1[Configure Subnets & Routing for VPC 1]
+    Start --> VPC2[Create VPC 2]
+    VPC2 --> Subnet2[Configure Subnets & Routing for VPC 2]  
+
+
+ ```
+  
 
 ### Step 2: Set Up VPC Peering
-
+Step 2: Set Up VPC Peering
+Next, we'll establish a peering connection between the two VPCs.
 1. **Request a VPC Peering Connection** from VPC 1 to VPC 2.
 2. **Accept the VPC Peering Connection** in VPC 2.
 
 **Flow:**
    - Request Peering from VPC 1 → Accept Peering in VPC 2
+
+
+ ```flowchart TD
+    RequestPeering[Request Peering from VPC 1] --> AcceptPeering[Accept Peering in VPC 2]
+
+ ```
+
 
 ### Step 3: Configure Route Tables
 
@@ -51,6 +78,16 @@ This project guides you through setting up **VPC Peering** between two Virtual P
 **Flow:**
    - Update Route Table in VPC 1 → Add Route to VPC 2
    - Update Route Table in VPC 2 → Add Route to VPC 1
+
+
+ ```flowchart TD
+    RouteVPC1[Update Route Table in VPC 1] --> RouteToVPC2[Add Route to VPC 2]
+    RouteVPC2[Update Route Table in VPC 2] --> RouteToVPC1[Add Route to VPC 1]
+
+ ```
+
+
+
 
 ### Step 4: Test Connectivity
 
@@ -62,6 +99,14 @@ This project guides you through setting up **VPC Peering** between two Virtual P
    - Ping from VPC 1 to VPC 2 → Ping from VPC 2 to VPC 1 → Verify Connection
 
 ---
+
+ ```flowchart TD
+    EC2VPC1[Launch EC2 in VPC 1] --> EC2VPC2[Launch EC2 in VPC 2]
+    EC2VPC2 --> PingTest[Ping from VPC 1 to VPC 2]
+    PingTest --> VerifyConnection[Verify Connection]
+
+ ```
+
 
 ## 🎮 Project Modes
 

@@ -1,7 +1,6 @@
-# VPC-PEERING
 # VPC Peering Project 🚀
 
-Welcome to the **VPC Peering Project**! In this project, we're taking a big step forward by setting up VPC Peering, playing with TWO VPCs instead of just one. This project will help you revise and solidify your knowledge from the previous project in a new and exciting scenario.
+Welcome to the **VPC Peering Project**! In this project, we're taking a big step forward by setting up VPC Peering, connecting TWO VPCs instead of just one. This project will help you revise and solidify your previous knowledge in a new and exciting scenario.
 
 ## Table of Contents
 
@@ -40,18 +39,12 @@ Before you start, ensure you have:
 
 ### Step 1: Create VPCs
 
+First, we'll create two VPCs to be connected via VPC Peering.
+
+```mermaid
 flowchart TD
-    A[Start: Initialize Project] --> B[Create VPC1]
-    A --> C[Create VPC2]
-    B --> D[Configure Subnets & Routing for VPC1]
-    C --> E[Configure Subnets & Routing for VPC2]
-    D --> F[Initiate VPC Peering from VPC1 to VPC2]
-    E --> G[Accept VPC Peering in VPC2]
-    F --> H[Update Route Tables for VPC1]
-    G --> I[Update Route Tables for VPC2]
-    H --> J[Test Connectivity]
-    I --> J
-    J --> K[Project Complete!]
-    K --> L[Clean Up Resources (Optional)]
+    A[Create VPC 1] --> B[Create VPC 2]
+    B --> C[Note VPC IDs]
+
 
 

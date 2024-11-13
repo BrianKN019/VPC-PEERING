@@ -35,16 +35,29 @@ Before you start, ensure you have:
 - Basic knowledge of VPCs, subnets, and route tables.
 - Familiarity with the AWS Management Console.
 
-## Setup Guide
-
-### Step 1: Create VPCs
-
-First, we'll create two VPCs to be connected via VPC Peering.
-
-```mermaid
+ Setup Guide
 flowchart TD
-    A[Create VPC 1] --> B[Create VPC 2]
-    B --> C[Note VPC IDs]
+    A[Request Peering Connection] --> B[Accept Peering Connection]
+
+flowchart TD
+    A[Update Route Table in VPC 1] --> B[Add Route to VPC 2]
+    C[Update Route Table in VPC 2] --> D[Add Route to VPC 1]
+
+flowchart TD
+    A[Start: Initialize Project] --> B[Create VPC1]
+    A --> C[Create VPC2]
+    B --> D[Configure Subnets & Routing for VPC1]
+    C --> E[Configure Subnets & Routing for VPC2]
+    D --> F[Initiate VPC Peering from VPC1 to VPC2]
+    E --> G[Accept VPC Peering in VPC2]
+    F --> H[Update Route Tables for VPC1]
+    G --> I[Update Route Tables for VPC2]
+    H --> J[Test Connectivity]
+    I --> J
+    J --> K[Project Complete!]
+    K --> L[Clean Up Resources (Optional)]
+
+
 
 
 

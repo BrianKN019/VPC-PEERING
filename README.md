@@ -46,3 +46,9 @@ First, we'll create two VPCs that we'll later connect using VPC Peering.
 flowchart TD
     A[Create VPC 1] --> B[Create VPC 2]
     B --> C[Note VPC IDs]
+
+
+Step 2: Set Up VPC Peering
+Next, we'll establish a peering connection between the two VPCs.
+flowchart TD
+    A[Request Peering Connection] --> B[Accept Peering Connection]

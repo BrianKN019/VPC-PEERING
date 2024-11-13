@@ -40,15 +40,18 @@ Before you start, ensure you have:
 
 ### Step 1: Create VPCs
 
-First, we'll create two VPCs that we'll later connect using VPC Peering.
-
-```mermaid
 flowchart TD
-    A[Create VPC 1] --> B[Create VPC 2]
-    B --> C[Note VPC IDs]
+    A[Start: Initialize Project] --> B[Create VPC1]
+    A --> C[Create VPC2]
+    B --> D[Configure Subnets & Routing for VPC1]
+    C --> E[Configure Subnets & Routing for VPC2]
+    D --> F[Initiate VPC Peering from VPC1 to VPC2]
+    E --> G[Accept VPC Peering in VPC2]
+    F --> H[Update Route Tables for VPC1]
+    G --> I[Update Route Tables for VPC2]
+    H --> J[Test Connectivity]
+    I --> J
+    J --> K[Project Complete!]
+    K --> L[Clean Up Resources (Optional)]
 
 
-Step 2: Set Up VPC Peering
-Next, we'll establish a peering connection between the two VPCs.
-flowchart TD
-    A[Request Peering Connection] --> B[Accept Peering Connection]

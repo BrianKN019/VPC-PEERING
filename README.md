@@ -102,8 +102,6 @@ flowchart TD
    - Launch EC2 in VPC 1 → Launch EC2 in VPC 2
    - Ping from VPC 1 to VPC 2 → Ping from VPC 2 to VPC 1 → Verify Connection
 
----
-
  ```mermaid
 flowchart TD
     EC2VPC1[Launch EC2 in VPC 1] --> EC2VPC2[Launch EC2 in VPC 2]

@@ -81,12 +81,6 @@ flowchart TD
    - Update Route Table in VPC 2 → Add Route to VPC 1
 
 
-```mermaid
-flowchart TD
-    RouteVPC1[Update Route Table in VPC 1] --> RouteToVPC2[Add Route to VPC 2]
-    RouteVPC2[Update Route Table in VPC 2] --> RouteToVPC1[Add Route to VPC 1]
- ```
-
  ```mermaid
 flowchart TD
     RouteVPC1[Update Route Table in VPC 1] --> RouteToVPC2[Add Route to VPC 2]

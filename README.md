@@ -1,4 +1,4 @@
-# VPC Peering Project 🚀
+# VPC Peering Project 🚀 
 
 Welcome to the **VPC Peering Project**! In this project, we're taking a big step forward by setting up VPC Peering, connecting TWO VPCs instead of just one. This project will help you revise and solidify your previous knowledge in a new and exciting scenario.
 

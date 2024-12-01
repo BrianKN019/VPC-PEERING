@@ -15,7 +15,7 @@ Welcome to the **VPC Peering Project**! In this project, we're taking a big step
 - [Project Modes](#project-modes)
 - [Resources](#resources)
 
-## Introduction
+## Introduction 
 
 In this project, you'll get hands-on experience with setting up VPC Peering between two Virtual Private Clouds (VPCs). This will enhance your understanding of network segmentation, security, and connectivity within the AWS environment.
 
